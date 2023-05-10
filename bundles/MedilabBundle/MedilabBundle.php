@@ -16,6 +16,6 @@ class MedilabBundle extends AbstractPimcoreBundle
         return 'v1.1.0';
     }
     public function getDescription(){
-        return 'Medilab cutome theme';
+        return 'Medilab custome theme';
     }
 }
