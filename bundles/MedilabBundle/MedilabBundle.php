@@ -12,4 +12,10 @@ class MedilabBundle extends AbstractPimcoreBundle
             '/bundles/medilab/js/pimcore/startup.js'
         ];
     }
+    public function getVersion(){
+        return 'v1.1.0';
+    }
+    public function getDescription(){
+        return 'Medilab cutome theme';
+    }
 }
