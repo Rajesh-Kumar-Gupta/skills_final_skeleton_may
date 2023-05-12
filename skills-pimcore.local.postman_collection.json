@@ -26,9 +26,16 @@
 		},
 		{
 			"name": "http://skills-pimcore.local/product-list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
 				"url": {
 					"raw": "http://skills-pimcore.local/product-list",
 					"protocol": "http",
@@ -52,8 +59,13 @@
 					"mode": "formdata",
 					"formdata": [
 						{
-							"key": "   id",
-							"value": "1ee",
+							"key": "sku",
+							"value": "sku0012",
+							"type": "default"
+						},
+						{
+							"key": "sku",
+							"value": "pro002",
 							"type": "default"
 						}
 					],
@@ -64,15 +76,187 @@
 					}
 				},
 				"url": {
-					"raw": "http://skills-pimcore.local/product-view/122",
+					"raw": "http://skills-pimcore.local/product-view-by-sku",
 					"protocol": "http",
 					"host": [
 						"skills-pimcore",
 						"local"
 					],
 					"path": [
-						"product-view",
-						"122"
+						"product-view-by-sku"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://skills-pimcore.local/product-view-by-id/656",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "id",
+						"value": "656",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "668",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://skills-pimcore.local/product-view-by-id",
+					"protocol": "http",
+					"host": [
+						"skills-pimcore",
+						"local"
+					],
+					"path": [
+						"product-view-by-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://skills-pimcore.local/product-update-by-id/656",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "https://picsum.photos/id/237/200/300",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "669",
+							"type": "default"
+						},
+						{
+							"key": "productName",
+							"value": "Product0012",
+							"type": "default"
+						},
+						{
+							"key": "productSKU",
+							"value": "sku0012",
+							"type": "default"
+						},
+						{
+							"key": "productImage",
+							"value": "https://picsum.photos/seed/picsum/200/300",
+							"type": "default"
+						},
+						{
+							"key": "categories",
+							"value": "cat3",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://skills-pimcore.local/product-update-by-id",
+					"protocol": "http",
+					"host": [
+						"skills-pimcore",
+						"local"
+					],
+					"path": [
+						"product-update-by-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://skills-pimcore.local/product-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productSKU",
+							"value": "sku00114",
+							"type": "default"
+						},
+						{
+							"key": "productName",
+							"value": "Product00121",
+							"type": "default"
+						},
+						{
+							"key": "productParentId",
+							"value": "655",
+							"type": "default"
+						},
+						{
+							"key": "productImage",
+							"value": "https://picsum.photos/id/237/200/300",
+							"type": "default"
+						},
+						{
+							"key": "categories",
+							"value": "cat11,cat12",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://skills-pimcore.local/product-create",
+					"protocol": "http",
+					"host": [
+						"skills-pimcore",
+						"local"
+					],
+					"path": [
+						"product-create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://skills-pimcore.local/product-delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "664",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://skills-pimcore.local/product-delete",
+					"protocol": "http",
+					"host": [
+						"skills-pimcore",
+						"local"
+					],
+					"path": [
+						"product-delete"
 					]
 				}
 			},
