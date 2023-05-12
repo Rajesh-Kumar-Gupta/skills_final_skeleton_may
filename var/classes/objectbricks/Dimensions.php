@@ -1,42 +1,22 @@
 <?php
 
 /**
- * Inheritance: no
- * Variants: no
- *
  * Fields Summary:
- * - Name [input]
- * - testClassificationStore [classificationstore]
- * - testObjectBricks [objectbricks]
+ * - length [quantityValue]
+ * - width [quantityValue]
+ * - weight [quantityValue]
  */
 
-return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
+return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'dao' => NULL,
-   'id' => 'testMe',
-   'name' => 'TestMe',
-   'description' => '',
-   'creationDate' => 0,
-   'modificationDate' => 1683716453,
-   'userOwner' => 2,
-   'userModification' => 2,
-   'parentClass' => '',
+   'key' => 'Dimensions',
+   'parentClass' => 'Product',
    'implementsInterfaces' => '',
-   'listingParentClass' => '',
-   'useTraits' => '',
-   'listingUseTraits' => '',
-   'encryption' => false,
-   'encryptedTables' => 
-  array (
-  ),
-   'allowInherit' => false,
-   'allowVariants' => false,
-   'showVariants' => false,
-   'fieldDefinitions' => 
-  array (
-  ),
+   'title' => '',
+   'group' => '',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'name' => 'pimcore_root',
+     'name' => NULL,
      'type' => NULL,
      'region' => NULL,
      'title' => NULL,
@@ -65,9 +45,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'Name',
-             'title' => 'Name',
+          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+             'name' => 'length',
+             'title' => 'Length',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -76,7 +56,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'input',
+             'fieldtype' => 'quantityValue',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -85,20 +65,26 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
             ),
              'width' => '',
+             'unitWidth' => '',
              'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
+             'defaultUnit' => NULL,
+             'validUnits' => 
             array (
             ),
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
              'unique' => false,
-             'showCharCount' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
+             'autoConvert' => false,
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
-             'name' => 'testClassificationStore',
-             'title' => 'Test Classification Store',
+          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+             'name' => 'width',
+             'title' => 'Width',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -107,7 +93,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'classificationstore',
+             'fieldtype' => 'quantityValue',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -115,37 +101,27 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'children' => 
+             'width' => '',
+             'unitWidth' => '',
+             'defaultValue' => NULL,
+             'defaultUnit' => NULL,
+             'validUnits' => 
             array (
             ),
-             'region' => NULL,
-             'layout' => NULL,
-             'width' => 0,
-             'height' => 0,
-             'maxTabs' => NULL,
-             'labelWidth' => 0,
-             'localized' => false,
-             'storeId' => 1,
-             'hideEmptyData' => false,
-             'disallowAddRemove' => false,
-             'referencedFields' => 
-            array (
-            ),
-             'fieldDefinitionsCache' => NULL,
-             'allowedGroupIds' => 
-            array (
-            ),
-             'activeGroupDefinitions' => 
-            array (
-            ),
-             'maxItems' => NULL,
-             'permissionView' => NULL,
-             'permissionEdit' => NULL,
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
+             'autoConvert' => false,
+             'defaultValueGenerator' => '',
           )),
           2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'name' => 'testObjectBricks',
-             'title' => 'Test Object Bricks',
+          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+             'name' => 'weight',
+             'title' => 'Weight',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -154,7 +130,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'objectbricks',
+             'fieldtype' => 'quantityValue',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -162,12 +138,22 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'allowedTypes' => 
+             'width' => '',
+             'unitWidth' => '',
+             'defaultValue' => NULL,
+             'defaultUnit' => NULL,
+             'validUnits' => 
             array (
-              0 => 'Dimensions',
             ),
-             'maxItems' => NULL,
-             'border' => false,
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
+             'autoConvert' => false,
+             'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,
@@ -193,46 +179,16 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => '',
-   'previewUrl' => '',
-   'group' => '',
-   'showAppLoggerTab' => false,
-   'linkGeneratorReference' => '',
-   'previewGeneratorReference' => '',
-   'compositeIndices' => 
-  array (
-  ),
    'generateTypeDeclarations' => true,
-   'showFieldLookup' => false,
-   'propertyVisibility' => 
-  array (
-    'grid' => 
-    array (
-      'id' => true,
-      'key' => false,
-      'path' => true,
-      'published' => true,
-      'modificationDate' => true,
-      'creationDate' => true,
-    ),
-    'search' => 
-    array (
-      'id' => true,
-      'key' => false,
-      'path' => true,
-      'published' => true,
-      'modificationDate' => true,
-      'creationDate' => true,
-    ),
-  ),
-   'enableGridLocking' => false,
-   'deletedDataComponents' => 
-  array (
-  ),
    'blockedVarsForExport' => 
   array (
   ),
-   'activeDispatchingEvents' => 
+   'classDefinitions' => 
   array (
+    0 => 
+    array (
+      'classname' => 'TestMe',
+      'fieldname' => 'testObjectBricks',
+    ),
   ),
 ));
