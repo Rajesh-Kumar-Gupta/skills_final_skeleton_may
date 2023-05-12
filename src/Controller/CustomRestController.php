@@ -48,11 +48,17 @@ class CustomRestController extends FrontendController
             $productDetails = new DataObject\Product();
 
             $productSKU = $request->get('productSKU');
-
             $productName = $request->get('productName');
             $productParentId = $request->get('productParentId');
             $productKey = 'product-'.$productSKU;
-            //$productCategories = array(object|643,object|644,);
+
+            $categories = $request->get('categories');
+            $productCategories = array();
+            $productCategory = explode(",", $categories);
+            foreach($productCategory as $eachCategoryId) {
+                $productCategories[] = DataObject\Category::getByCategoryId($eachCategoryId, 1);
+            }
+
             $productImage = new ExternalImage();
             $productImage->setUrl($request->get('productImage'));
             
@@ -60,7 +66,7 @@ class CustomRestController extends FrontendController
             $productDetails->setProductSKU($productSKU);
             $productDetails->setProductName($productName);
             $productDetails->setImage($productImage);
-            //$productDetails->setCategory($productCategories);
+            $productDetails->setCategory($productCategories);
             $productDetails->setParentId($productParentId);
             $productDetails->setKey($productKey);
             $productDetails->setPublished(true);
@@ -84,7 +90,14 @@ class CustomRestController extends FrontendController
             $id = $request->get('id');
             $productName = $request->get('productName');
             $productSKU = $request->get('productSKU');
-            
+
+            $categories = $request->get('categories');
+            $productCategories = array();
+            $productCategory = explode(",", $categories);
+            foreach($productCategory as $eachCategoryId) {
+                $productCategories[] = DataObject\Category::getByCategoryId($eachCategoryId, 1);
+            }
+
             $productImage = new ExternalImage();
             $productImage->setUrl($request->get('productImage'));
             
@@ -94,6 +107,7 @@ class CustomRestController extends FrontendController
                 $productDetails->setProductSKU($productSKU);
                 $productDetails->setProductName($productName);
                 $productDetails->setImage($productImage);
+                $productDetails->setCategory($productCategories);
                 $productDetails->save();
                 $msg = 'Product Updated successfully!';
                 $success = true;
