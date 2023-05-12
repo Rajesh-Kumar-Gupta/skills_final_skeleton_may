@@ -30,7 +30,7 @@ class CustomRestController extends FrontendController
                 $msg = "Product Deleted Successfully";
                 $success = true;
             }else{
-                $msg = "No data found.";
+                $msg = "Product id is invalid.";
                 $success = false;
             }
         } catch (\Exception $e) {
@@ -116,16 +116,21 @@ class CustomRestController extends FrontendController
         try{
             $id = $request->get('id');
             $productList = new DataObject\Product\Listing();
+
             $productList->setCondition("oo_id LIKE ?", $id);
             $productDetails = $productList->load();
             
             if($productDetails){
                 foreach ($productDetails as $key => $product) {
+                    $categories = array();
+                    foreach ($product->getCategory() as $key => $eachCategory) {
+                       $categories[$eachCategory->getCategoryId()] = $eachCategory->getCategoryName() ;
+                    }
                     $data[] = array(
-                        //"productId" => $product->getOo_id(),
                         "productSKU" => $product->getProductSKU(),
                         "productName" => $product->getProductName(),
                         "productImage" => $product->getImage(),
+                        "productCategory" => $categories,
                     );
                 }
                 $msg = $data;
@@ -154,10 +159,15 @@ class CustomRestController extends FrontendController
             $productDetails = $productList->load();
             if($productDetails){
                 foreach ($productDetails as $key => $product) {
+                    $categories = array();
+                    foreach ($product->getCategory() as $key => $eachCategory) {
+                       $categories[$eachCategory->getCategoryId()] = $eachCategory->getCategoryName() ;
+                    }
                     $data[] = array(
                         "productSKU" => $product->getProductSKU(),
                         "productName" => $product->getProductName(),
                         "productImage" => $product->getImage(),
+                        "productCategory" => $categories,
                     );
                 }
                 $msg = $data;
@@ -184,11 +194,15 @@ class CustomRestController extends FrontendController
             $products = new DataObject\Product\Listing();
             if($products){
                 foreach ($products as $key => $product) {
+                    $categories = array();
+                    foreach ($product->getCategory() as $key => $eachCategory) {
+                       $categories[$eachCategory->getCategoryId()] = $eachCategory->getCategoryName() ;
+                    }
                     $data[] = array(
                         "productSKU" => $product->getProductSKU(),
                         "productName" => $product->getProductName(),
                         "productImage" => $product->getImage(),
-                        //"productCategory" => $product->getCategory(),
+                        "productCategory" => $categories,
                         );
                 }
                 $msg = $data;
