@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "ddf81c8d-cc3b-44f0-8008-fbe94205ff81",
+		"name": "skills-pimcore.local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://skills-pimcore.local/category-list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://skills-pimcore.local/category-list",
+					"protocol": "http",
+					"host": [
+						"skills-pimcore",
+						"local"
+					],
+					"path": [
+						"category-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://skills-pimcore.local/product-list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://skills-pimcore.local/product-list",
+					"protocol": "http",
+					"host": [
+						"skills-pimcore",
+						"local"
+					],
+					"path": [
+						"product-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://skills-pimcore.local/product-view/122",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "   id",
+							"value": "1ee",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://skills-pimcore.local/product-view/122",
+					"protocol": "http",
+					"host": [
+						"skills-pimcore",
+						"local"
+					],
+					"path": [
+						"product-view",
+						"122"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
