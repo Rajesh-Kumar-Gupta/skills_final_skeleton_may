@@ -13,6 +13,50 @@ use Pimcore\Model\DataObject\Data\ExternalImage;
 class CustomRestController extends FrontendController
 {
     /**
+     * @Route("/user-login", name="user_login", methods={"POST"})
+     */
+    public function userLoginAction(Request $request){
+        $userEmail = $request->get('email');
+        $userPassword = $request->get('password');
+        if($userEmail && $userPassword){
+            $success = true;
+            $msg = 'OK';
+            $data = array(['email'=>$userEmail,'password'=>$userPassword]);
+        }else{
+            $success = false;
+            $msg = 'email or password is required';
+            $data = array();
+        }
+        return $this->json(["success" => $success, "msg" => $msg, 'data'=>$data]);
+    }
+
+    /**
+     * @Route("/user-register", name="user_register", methods={"POST"})
+     */
+    public function userRegisterAction(Request $request){
+        $userName = $request->get('name');
+        $userEmail = $request->get('email');
+        $userPassword = $request->get('password');
+        $userCPassword = $request->get('cpassword');
+        if($userEmail && $userPassword && $userName && $userCPassword){
+            if($userPassword != $userCPassword){
+                $success = false;
+                $msg = 'password and cpassword should be same';
+                $data = array(['name' => $userName,'email' => $userEmail,'password' => $userPassword,'cpassword' => $userCPassword]);
+            }else{
+                $success = true;
+                $msg = 'OK';
+                $data = array(['name' => $userName,'email' => $userEmail,'password' => $userPassword,'cpassword' => $userCPassword]);
+            }
+            
+        }else{
+            $success = false;
+            $msg = 'All fields are required';
+            $data = array();
+        }
+        return $this->json(["success" => $success, "msg" => $msg, 'data'=>$data]);
+    }
+    /**
      * @Route("/product-delete", name="product_delete", methods={"POST"})
      */
     public function productIdDeleteAction(Request $request)
