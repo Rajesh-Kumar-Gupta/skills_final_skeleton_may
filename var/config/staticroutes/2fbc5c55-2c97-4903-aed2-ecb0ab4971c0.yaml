@@ -1,0 +1,15 @@
+pimcore:
+    staticroutes:
+        definitions:
+            2fbc5c55-2c97-4903-aed2-ecb0ab4971c0:
+                name: test
+                pattern: /\/en\/testLogin/
+                reverse: ''
+                controller: 'MedilabBundle\Controller\DefaultController::loginAction'
+                variables: ''
+                defaults: ''
+                siteId: {  }
+                methods: {  }
+                priority: 0
+                creationDate: 1684051786
+                modificationDate: 1684052010
