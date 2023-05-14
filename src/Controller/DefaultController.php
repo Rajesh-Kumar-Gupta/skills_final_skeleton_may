@@ -16,4 +16,14 @@ class DefaultController extends FrontendController
     {
         return $this->render('default/default.html.twig');
     }
+
+    /**
+     * @param Request $request
+     * @return Response
+     */
+    public function dtAction(Request $request): Response
+    {
+        //return [];
+        return $this->render('default/dt.html.twig');
+    }
 }

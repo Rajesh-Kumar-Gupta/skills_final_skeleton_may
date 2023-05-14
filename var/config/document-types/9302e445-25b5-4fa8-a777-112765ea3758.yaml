@@ -1,0 +1,14 @@
+pimcore:
+    documents:
+        doc_types:
+            definitions:
+                9302e445-25b5-4fa8-a777-112765ea3758:
+                    name: 'Test Document Type'
+                    group: ''
+                    controller: 'App\Controller\DefaultController::dtAction'
+                    template: null
+                    type: page
+                    priority: 0
+                    creationDate: 1684054478
+                    modificationDate: 1684055541
+                    staticGeneratorEnabled: null
