@@ -8,6 +8,7 @@
  * - Name [input]
  * - Email [input]
  * - Password [password]
+ * - testQv [quantityValue]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -16,7 +17,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Account',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1683197157,
+   'modificationDate' => 1684070101,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -151,6 +152,43 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'salt' => '',
              'saltlocation' => 'back',
              'minimumLength' => NULL,
+          )),
+          3 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+             'name' => 'testQv',
+             'title' => 'Test Qv',
+             'tooltip' => 'testQv',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'quantityValue',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'width' => '',
+             'unitWidth' => '',
+             'defaultValue' => 0,
+             'defaultUnit' => 'g',
+             'validUnits' => 
+            array (
+            ),
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => NULL,
+             'decimalSize' => 4,
+             'decimalPrecision' => 2,
+             'autoConvert' => true,
+             'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,
